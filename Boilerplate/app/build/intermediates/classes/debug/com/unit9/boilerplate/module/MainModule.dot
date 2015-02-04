@@ -1,0 +1,9 @@
+digraph G1 {
+  concentrate = true;
+  n2 [label="com.unit9.boilerplate.network.Login.LoginNetwork"];
+  MainActivity -> n2;
+  MainActivity -> Log;
+  n3 [label="members/com.unit9.boilerplate.network.Login.LoginNetwork"];
+  n4 [label="com.unit9.boilerplate.network.HttpManager"];
+  n3 -> n4;
+}

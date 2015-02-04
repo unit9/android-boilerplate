@@ -1,0 +1,6 @@
+digraph G1 {
+  concentrate = true;
+  n2 [label="com.unit9.boilerplate.network.HttpManager"];
+  SplashScreenActivity -> n2;
+  SplashScreenActivity -> Log;
+}

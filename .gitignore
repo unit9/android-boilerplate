@@ -1,0 +1,13 @@
+*.idea
+*.iml
+*.glade
+**/gradle
+**/*.iml
+**/.gradle
+**/.idea
+**/gradlew
+**/gradle.properties
+*gradlew
+*gradle.properties
+**/build
+/dist/henson/Android-Sprite-Batcher-master/build
