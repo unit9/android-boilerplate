@@ -14,17 +14,19 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module(
-        injects = { MainActivity.class, LoginNetwork.class,App.class }
+        injects = { MainActivity.class, App.class},
+        includes = {LogModule.class}
 )
 public class MainModule {
+
+
+
     @Provides
     @Singleton
-    Log providePrint() {
-        return new Log();
-    }
+    LoginNetwork provideLoginNetwork(HttpManager httpManager) { return new LoginNetwork(httpManager); }
 
-    @Provides @Singleton
-    LoginNetwork provideLoginNetwork() {
-        return new LoginNetwork();
-    }
+    @Provides
+    @Singleton
+    HttpManager provideHttpManager() { return new HttpManager(); }
+
 }

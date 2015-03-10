@@ -1,14 +1,11 @@
 package com.unit9.boilerplate.activity;
 
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.view.View;
 
 import com.unit9.boilerplate.R;
 import com.unit9.boilerplate.module.LogModule;
 import com.unit9.boilerplate.module.MainModule;
-import com.unit9.boilerplate.network.HttpManager;
-import com.unit9.boilerplate.network.Login.LoginNetwork;
 import com.unit9.boilerplate.util.Log;
 
 import java.util.Arrays;
@@ -17,24 +14,18 @@ import java.util.List;
 import javax.inject.Inject;
 
 
-public class MainActivity extends BaseActivity {
+public class TestActivity extends BaseActivity {
     @Inject
-   Log log;
-
-    @Inject
-    LoginNetwork login;
+    Log log;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TAG = "Main Activity";
+        TAG = "Test Activity";
 
-        StrictMode.ThreadPolicy policy =
-                new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
+        log.print("test","test activity");
 
-        log.print("http",login.doLogin("user","password"));
 
     }
 
@@ -53,12 +44,12 @@ public class MainActivity extends BaseActivity {
     /** DAGGER Setup */
     @Override
     protected List<Object> getModules() {
-        modules = Arrays.<Object>asList(new MainModule());
+        modules = Arrays.<Object>asList(new LogModule());
         return modules;
     }
 
     @Override
     protected void log(String text) {
-        //log.print(TAG,text);
+        log.print(TAG,text);
     }
 }

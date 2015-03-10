@@ -9,15 +9,17 @@ import javax.inject.Inject;
 
 import dagger.Module;
 
-@Module(
-        injects = { HttpManager.class }
-)
+
 
 public class LoginNetwork {
-    @Inject
-    HttpManager mHttpManager;
+    private final HttpManager mHttpManager;
 
-    public void doLogin(String username, String password) {
 
+    public LoginNetwork(HttpManager mHttpManager) {
+        this.mHttpManager = mHttpManager;
+    }
+
+    public String doLogin(String username, String password) {
+           return mHttpManager.doGet("http://www.google.com");
     }
 }

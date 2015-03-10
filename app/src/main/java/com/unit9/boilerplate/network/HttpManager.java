@@ -31,6 +31,10 @@ public class HttpManager {
     private  HttpContext localContext = new BasicHttpContext();
     private  CookieStore cookieStore = new BasicCookieStore();
 
+    public HttpManager() {
+
+    }
+
     public String doPost(String url, List<NameValuePair> values) {
         // Making HTTP request
         try {

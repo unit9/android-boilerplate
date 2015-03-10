@@ -41,8 +41,7 @@ public class SplashScreenActivity extends BaseActivity  {
 
         Timer tm = new Timer();
         tm.schedule(t, 1000);
-
-        log(httpManager.doGet("http://www.google.it"));
+        log.print("aa","aa");
 
     }
 
